@@ -3,14 +3,11 @@ import os
 
 """ Experiment Setting """ 
 # ARGUMENT
-parser = argparse.ArgumentParser(description='Fatigue')
-parser.add_argument('--data-root', default='/opt/workspace/DY_DATASET/')
-parser.add_argument('--save-root', default='./RESULT_re/')
-parser.add_argument('--result-dir', default="") 
-# parser.add_argument('--data_root', default='DATASET_DIR/', help="name of the data folder")
+parser = argparse.ArgumentParser(description='Fatigue') 
+parser.add_argument('--data_root', default='DATASET_DIR/', help="name of the data folder")
 parser.add_argument('--run_code_folder', default='')
-# parser.add_argument('--save_root', default='./MODEL_SAVE_DIR/', help="where to save the models and tensorboard records")
-# parser.add_argument('--result_dir', default="", help="save folder name")
+parser.add_argument('--save_root', default='./MODEL_SAVE_DIR/', help="where to save the models and tensorboard records")
+parser.add_argument('--result_dir', default="", help="save folder name")
 parser.add_argument('--total_path', default="", help='total result path')
 parser.add_argument('--cuda', type=bool, default=True, help='cuda')
 parser.add_argument('--cuda_num', type=int, default=0, help='cuda number')
@@ -50,9 +47,9 @@ parser.add_argument('--metric_dict', default={"loss":0,"acc":1, "bacc":2, "f1":3
 args = parser.parse_args()
 args=vars(args)
 
-subjectList=[['s01_061102n', 's05_061101n'], ['s22_090825n', 's31_061103n'], 
-            ['s35_070322n', 's41_080520m'], ['s42_070105n'], ['s43_070205n'], 
-            ['s44_070325n'], ['s45_070307n'], ['s53_090918n']] 
+subjectList=['S01', 'S02', 'S03', 'S04', 
+             'S05', 'S06', 'S07', 'S08', 
+             'S09', 'S10', 'S11'] 
 
 model_name='resnet18'
 
@@ -64,20 +61,20 @@ args["lr"]=0.002
 args["weight_decay"]=0 
 args["steps"]=3000
 args['optimizer']="Adam" 
-args["data_root"]=args["data_root"]+"/NNLS_dataset/"
+args["data_root"]=args["data_root"]+"/B/"
 
 
 import Main
 
-# # mixup augmentaion
-# args["aug_type"]="mixup"
-# args['mixup_alpha']=0.5
-# Main.main(subjectList, args, model_name) 
+# mixup augmentaion
+args["aug_type"]="mixup"
+args['mixup_alpha']=0.5
+Main.main(subjectList, args, model_name) 
 
-# # manifold mixup augmentaion
-# args["aug_type"]="manifoldmixup"
-# args['mixup_alpha']=0.5
-# Main.main(subjectList, args, model_name) 
+# manifold mixup augmentaion
+args["aug_type"]="manifoldmixup"
+args['mixup_alpha']=0.5
+Main.main(subjectList, args, model_name) 
 
 # mixstyle augmentation
 args["aug_type"]="mixstyle"
