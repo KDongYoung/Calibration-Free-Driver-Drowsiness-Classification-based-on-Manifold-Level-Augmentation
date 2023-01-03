@@ -60,7 +60,7 @@ def Experiment(args, subject_id, subjectList):
     return valid_best, t_loss, t_acc, t_bacc, t_f1, t_preci, t_rocauc, t_recall, t_timecost
 
 def start_Training(args, subjectList, subject_id, seed):    
-    flatten_subjectList=sum(subjectList,[])
+    flatten_subjectList=subjectList # sum(subjectList,[])
     num_domain=len(flatten_subjectList)-1
     
     # MODEL
@@ -75,7 +75,7 @@ def start_Training(args, subjectList, subject_id, seed):
     return valid_best
     
 def start_Inference(args, subjectList, subject_id, seed): # prediction  
-    flatten_subjectList=sum(subjectList,[])
+    flatten_subjectList=subjectList # sum(subjectList,[])
     num_domain=len(flatten_subjectList)-1
     
     t_loss, t_acc, t_bacc, t_f1, t_preci, t_rocauc, t_recall, t_timecost = [], [], [], [], [], [], [], []
