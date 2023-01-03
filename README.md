@@ -1,5 +1,5 @@
-# Calibration-Free-Driver-Drowsiness-Classification-based-on-Manifold-Level-Augmentation
-This is an official repo for Calibration-Free Driver Drowsiness Classification based on Manifold-Level Augmentation (Proc. Int. Winter Conf.  Brain-Computer Interface, 2023) [\[Paper\]](https://arxiv.org/abs/2212.13887)
+# Calibration-Free Driver Drowsiness Classification based on Manifold-Level Augmentation 
+This is an official repo for Calibration-Free Driver Drowsiness Classification based on Manifold-Level Augmentation (Proc. Int. Winter Conf. Brain-Computer Interface, 2023) [\[Paper\]](https://arxiv.org/abs/2212.13887)
 
 ## Description
 
