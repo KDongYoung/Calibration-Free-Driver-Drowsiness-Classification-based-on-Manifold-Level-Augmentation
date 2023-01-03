@@ -76,12 +76,12 @@ ${MODEL_SAVE_DIR}
 ### Evaluation
 
 **The average results (%) for drowsiness classification:**
-| Model    | F1-score ± Std. | 
-| -------- | --------------- | 
-| Baseline |  64.67 ± 18.26  | 
-| OURS     |  68.41 ± 15.28  | 
+| Model                      | F1-score ± Std. | 
+| -------------------------- | --------------- | 
+| Baseline                   |  64.67 ± 18.26  | 
+| Baseline + augmentation (ours)   |  68.41 ± 15.28  | 
 
-Std.:  Standard  deviation
+Std.: Standard deviation
 
 ## Citation
 
