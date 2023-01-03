@@ -34,7 +34,7 @@ Download the unbalanced dataset available in the paper titled "EEG-Based Cross-S
 
 (Ref: J. Cui, Z. Lan, O. Sourina and W. Müller-Wittig, "EEG-Based Cross-Subject Driver Drowsiness Recognition With an Interpretable Convolutional Neural Network," in IEEE Transactions on Neural Networks and Learning Systems, doi: 10.1109/TNNLS.2022.3147208.)
 
-Unbalanced dataset available in [\[Dataset Download Link]\](https://figshare.com/articles/dataset/EEG_driver_drowsiness_dataset_unbalanced_/16586957)
+Unbalanced dataset available in [\[Dataset Download Link\]](https://figshare.com/articles/dataset/EEG_driver_drowsiness_dataset_unbalanced_/16586957)
 
 The directory structure should look like this:
 
