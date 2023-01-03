@@ -12,7 +12,7 @@ We propose a robust calibration-free driver drowsiness classification framework 
 Clone the repo:
 
 ```bash
-git clone 
+git clone https://github.com/KDongYoung/Calibration-Free-Driver-Drowsiness-Classification-based-on-Manifold-Level-Augmentation.git
 ```
 
 Install the requirements using `conda`:
