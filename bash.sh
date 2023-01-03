@@ -5,4 +5,4 @@ do
     CUDA_VISIBLE_DEVICES=$gpu_idx python code정리/TotalMain.py --subject_group=$idx --cuda_num=$gpu_idx --dataset_name=B&
 done
 wait
-echo "Public dataset End"
+echo "Dataset B End"
