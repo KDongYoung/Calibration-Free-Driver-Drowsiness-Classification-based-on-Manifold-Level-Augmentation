@@ -86,11 +86,13 @@ Std.: Standard deviation
 ## Citation
 
 ```
-@article{kim2022calibration,
+@inproceedings{kim2023calibration,
   title={Calibration-Free Driver Drowsiness Classification based on Manifold-Level Augmentation},
   author={Kim, Dong-Young and Han, Dong-Kyun and Shin, Hye-Bin},
-  journal={arXiv preprint arXiv:2212.13887},
-  year={2022}
+  booktitle={2023 11th International Winter Conference on Brain-Computer Interface (BCI)},
+  pages={1--4},
+  year={2023},
+  organization={IEEE}
 }
 ```
 
