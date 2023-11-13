@@ -3,7 +3,7 @@ This is an official repo for Calibration-Free Driver Drowsiness Classification b
 
 ## Description
 
-We propose a robust calibration-free driver drowsiness classification framework by a manifold-level augmentation. We gathered samples from  all the subjects/domains in a domain-balaced and class-balanced manner an composed a mini-batch. We generated samples of unseen domains by mixing intermediate instances’ style statistics to preserve the characteristics of EEG signals.
+We propose a robust calibration-free driver drowsiness classification framework by a manifold-level augmentation. We gathered samples from  all the subjects/domains in a domain-balanced and class-balanced manner and composed a mini-batch. We generated samples of unseen domains by mixing intermediate instances’ style statistics to preserve the characteristics of EEG signals.
 
 ## Getting Started
 
@@ -26,11 +26,11 @@ pip install -r requirements.txt
 IF using a Docker, use the recent image file ("pytorch:22.04-py3") uploaded in the [\[NVIDIA pytorch\]](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) when running a container
 
 
-## Data preparation
+## Data Preparation
 
 First, create a folder `${DATASET_DIR}` to store the data of each subject.
 
-Download the unbalanced dataset available in the paper titled "EEG-Based Cross-Subject Driver Drowsiness Recognition With an Interpretable Convolutional Neural Network" published in *IEEE Transactions on Neural Networks and Learning Systems* at 2022.
+Download the unbalanced dataset available in the paper titled "EEG-Based Cross-Subject Driver Drowsiness Recognition With an Interpretable Convolutional Neural Network" published in *IEEE Transactions on Neural Networks and Learning Systems* in 2022.
 
 (Ref: J. Cui, Z. Lan, O. Sourina and W. Müller-Wittig, "EEG-Based Cross-Subject Driver Drowsiness Recognition With an Interpretable Convolutional Neural Network," in IEEE Transactions on Neural Networks and Learning Systems, doi: 10.1109/TNNLS.2022.3147208.)
 
@@ -54,7 +54,7 @@ python TotalMain.py --mode infer
 
 The (BEST model for each SUBJECT and the tensorboard records) are saved in `${MODEL_SAVE_DIR}/{seed}_{step}/{model_name}` by default
 
-The results are saved in text and csv files in `${MODEL_SAVE_DIR}/{seed}_{step}/{Results}/{evalauation metric}` by default
+The results are saved in text and csv files in `${MODEL_SAVE_DIR}/{seed}_{step}/{Results}/{evaluation metric}` by default
 
 -> The BEST models are saved separately in each folder based on the evaluation metric used to select the model for validation.
 
