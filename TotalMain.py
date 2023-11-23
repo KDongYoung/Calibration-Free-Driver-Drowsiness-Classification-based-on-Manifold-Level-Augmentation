@@ -35,7 +35,6 @@ parser.add_argument('--steps', type=int, default=0, help='Number of steps')
 parser.add_argument('--checkpoint_freq', type=int, default=50, help='Checkpoint every N steps')
 parser.add_argument('--seed', type=int, default=2023, help='seed')
 
-parser.add_argument('--dataset_name', default='B', help='A, B')
 parser.add_argument('--model_name', default='resnet8', help='trained model name')
 parser.add_argument('--mode', default='train', help='train, infer')
 parser.add_argument('--aug_type', default='', help='mixstyle, mixup, manifoldmixup')
@@ -50,7 +49,7 @@ subjectList=['S01', 'S02', 'S03', 'S04',
              'S05', 'S06', 'S07', 'S08', 
              'S09', 'S10', 'S11'] 
 
-model_name='resnet18'
+model_name='Resnet18'
 
 args["run_code_folder"]=os.path.realpath(__file__) # current folder name of running code
 args["n_classes"]=2
@@ -60,7 +59,7 @@ args["lr"]=0.002
 args["weight_decay"]=0 
 args["steps"]=3000
 args['optimizer']="Adam" 
-args["data_root"]=args["data_root"]+"/B/"
+args["data_root"]=args["data_root"]+"/"
 
 
 import Main

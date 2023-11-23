@@ -59,24 +59,22 @@ def Experiment(args, subject_id, subjectList):
    
     return valid_best, t_loss, t_acc, t_bacc, t_f1, t_preci, t_rocauc, t_recall, t_timecost
 
-def start_Training(args, subjectList, subject_id, seed):    
-    flatten_subjectList=subjectList # sum(subjectList,[])
-    num_domain=len(flatten_subjectList)-1
+def start_Training(args, subjectList, subject_id, seed):  
+    num_domain=len(subjectList)-1
     
     # MODEL
     model = Resnet18(args, num_domain)
     if args['cuda']: model.cuda(device=args['device']) # connect DEVICE
     
-    train_loaders, valid_loader, test_loader, _ = init_dataset(args, subject_id, flatten_subjectList, seed) # load dataloader
+    train_loaders, valid_loader, test_loader, _ = init_dataset(args, subject_id, subjectList, seed) # load dataloader
     
-    trainer = Trainer(args, subjectList, flatten_subjectList, subject_id, model)
+    trainer = Trainer(args, subjectList, subjectList, subject_id, model)
     valid_best = trainer.training(train_loaders, valid_loader, test_loader) # train, valid
     
     return valid_best
     
 def start_Inference(args, subjectList, subject_id, seed): # prediction  
-    flatten_subjectList=subjectList # sum(subjectList,[])
-    num_domain=len(flatten_subjectList)-1
+    num_domain=len(subjectList)-1
     
     t_loss, t_acc, t_bacc, t_f1, t_preci, t_rocauc, t_recall, t_timecost = [], [], [], [], [], [], [], []
     
@@ -85,9 +83,9 @@ def start_Inference(args, subjectList, subject_id, seed): # prediction
         best_model = Resnet18(args, num_domain)    
         if args['cuda']: best_model.cuda(device=args['device']) # connect DEVICE
          
-        test_loader = init_dataset(args, subject_id, flatten_subjectList, seed)
+        test_loader = init_dataset(args, subject_id, subjectList, seed)
         
-        best_trainer=Trainer(args, subjectList, flatten_subjectList, subject_id, best_model)
+        best_trainer=Trainer(args, subjectList, subjectList, subject_id, best_model)
         
         loss, acc, bacc, f1, preci, rocauc, recall, cost = best_trainer.prediction(metric, test_loader)
         cost = np.mean(cost[1:]) 
@@ -129,7 +127,7 @@ def main(subjectList, args, model_name):
         print(str(args['dataset_name']) + " / " + str(args['seed']) + " / " + exp_type)   
         print("~"*25 + ' Valid Subject ' + subjectList[id] + " " + "~"*25)
 
-        valid_best, loss, acc, bacc, f1, preci, auc, recall, time_cost = Experiment(args, before_sbj_num+id, subjectList)
+        valid_best, loss, acc, bacc, f1, preci, auc, recall, time_cost = Experiment(args, id, subjectList)
         
         ### print performance
         if args["mode"]=="train":

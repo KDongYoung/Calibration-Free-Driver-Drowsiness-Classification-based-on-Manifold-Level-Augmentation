@@ -1,13 +1,13 @@
 import torch
 import numpy as np
-import Data_Load.DriverDrowsinessDataset_3sec as DriverDrowsinessDataset_3sec
+from Data_Load.DriverDrowsinessDataset_3sec import DriverDrowsiness 
 import torch
 from collections import Counter
 
 def init_dataset(args, subj_idx, SUBJECT_LIST, seed):
     test_envs = np.r_[subj_idx].tolist() 
 
-    dataset = DriverDrowsinessDataset_3sec.DriverDrowsiness(args, args['data_root'], SUBJECT_LIST) # load total data
+    dataset = DriverDrowsiness(args, args['data_root'], SUBJECT_LIST) # load total data
 
     train_envs = list(range(len(SUBJECT_LIST)))
     train_envs.remove(subj_idx)
